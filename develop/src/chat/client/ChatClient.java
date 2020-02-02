@@ -257,7 +257,6 @@ public class ChatClient
      * @param serverNamePattern The substring to match against the server name.
      */
 
-    afkTimer afkTimer = new afkTimer(this);
     public void connectToChat (String serverNamePattern)
     {
         // See if we know any servers at all.
@@ -331,8 +330,8 @@ public class ChatClient
                     nextServer.register(this);
                     System.out.println("ok]");
                     //INIT TIMER
-                    Thread timer = new Thread(afkTimer);
-                    timer.start();
+                    if(isAfk)
+                        timer.start();
                 }
                 catch (RemoteException rex) {
                     nextServer = null;
@@ -488,6 +487,8 @@ public class ChatClient
 
     boolean isAfk = true; // are afk notifications on?
     int afkNotTime = 3; // afk notification time in seconds
+    afkTimer afkTimer = new afkTimer(this, afkNotTime);
+    Thread timer = new Thread(afkTimer);
     protected void showAfk (String [] argv) {
         if(argv.length == 1) {
             System.out.print ("AFK is on: " + isAfk);
@@ -502,6 +503,7 @@ public class ChatClient
             if(Integer.parseInt(argv[1]) > 0) {
                 isAfk = true;
                 afkNotTime = Integer.parseInt(argv[1]);
+                afkTimer = new afkTimer(this, afkNotTime);
             }
             else if (argv[1].equals("0")) {
                 isAfk = false;
@@ -557,6 +559,9 @@ public class ChatClient
 
             try {
                 buf = d.readLine ();
+                timer.stop();
+                timer = new Thread(afkTimer);
+                timer.start();
             }
             catch (IOException iox) {
                 iox.printStackTrace ();
