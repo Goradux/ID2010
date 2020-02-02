@@ -561,7 +561,8 @@ public class ChatClient
                 buf = d.readLine ();
                 timer.stop();
                 timer = new Thread(afkTimer);
-                timer.start();
+                if(isAfk)
+                    timer.start();
             }
             catch (IOException iox) {
                 iox.printStackTrace ();
