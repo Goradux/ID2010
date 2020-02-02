@@ -484,19 +484,25 @@ public class ChatClient
     boolean isAfk = true; // are afk notifications on?
     int afkNotTime = 30; // afk notification time in seconds
     protected void showAfk (String [] argv) {
-        if(argv.length == 0) {
-            System.out.println ("AFK is on: " + isAfk);
-            if(isAfk) System.out.print (" Timer is " + afkNotTime);
-        }
         if(argv.length == 1) {
-            if(argv[0] == "" && Integer.parseInt(argv[0]) > 0) {
-                isAfk = true;
-                afkNotTime = Integer.parseInt(argv[0]);
+            System.out.print ("AFK is on: " + isAfk);
+            if(isAfk) {
+                System.out.println (", Timer is " + afkNotTime);
             }
-            else if (argv[1] == "0") {
+            else {
+                System.out.println();
+            }
+        }
+        if(argv.length == 2) {
+            if(Integer.parseInt(argv[1]) > 0) {
+                isAfk = true;
+                afkNotTime = Integer.parseInt(argv[1]);
+            }
+            else if (argv[1].equals("0")) {
                 isAfk = false;
             }
         }
+
     }
 
     /**
