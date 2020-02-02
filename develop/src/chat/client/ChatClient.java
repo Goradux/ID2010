@@ -78,7 +78,7 @@ public class ChatClient
     /**
      * The name the user has choosen to present itself as.
      */
-    protected String myName = null;
+    protected volatile String myName = null;
 
     /**
      * Jini helper object (actually, a kind of service) that automates
@@ -257,6 +257,7 @@ public class ChatClient
      * @param serverNamePattern The substring to match against the server name.
      */
 
+    boolean first = true;
     public void connectToChat (String serverNamePattern)
     {
         // See if we know any servers at all.
@@ -330,10 +331,11 @@ public class ChatClient
                     nextServer.register(this);
                     System.out.println("ok]");
                     //INIT TIMER
-                    if(isAfk) {
+                    if(isAfk && !first) {
                         Thread timer = new Thread(afkTimer);
                         timer.start();
                     }
+                    first = false;
                 }
                 catch (RemoteException rex) {
                     nextServer = null;
@@ -488,7 +490,7 @@ public class ChatClient
     }
 
     boolean isAfk = true; // are afk notifications on?
-    int afkNotTime = 3; // afk notification time in seconds
+    int afkNotTime = 15; // afk notification time in seconds
     afkTimer afkTimer = new afkTimer(this, afkNotTime);
     Thread timer = new Thread(afkTimer);
     protected void showAfk (String [] argv) {
