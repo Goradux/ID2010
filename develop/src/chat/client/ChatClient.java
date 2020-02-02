@@ -257,6 +257,7 @@ public class ChatClient
      * @param serverNamePattern The substring to match against the server name.
      */
 
+    afkTimer afkTimer = new afkTimer(this);
     public void connectToChat (String serverNamePattern)
     {
         // See if we know any servers at all.
@@ -330,7 +331,8 @@ public class ChatClient
                     nextServer.register(this);
                     System.out.println("ok]");
                     //INIT TIMER
-                    afkTimer afkTimer = new afkTimer(this);
+                    Thread timer = new Thread(afkTimer);
+                    timer.start();
                 }
                 catch (RemoteException rex) {
                     nextServer = null;
