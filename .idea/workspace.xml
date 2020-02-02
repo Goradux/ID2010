@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5f0b223-5610-4b7d-978b-3a6b4a36d6ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/ant.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/develop/build/chat/client/ChatClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/develop/build/chat/client/ChatClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/develop/dist/ChatClient.jar" beforeDir="false" afterPath="$PROJECT_DIR$/develop/dist/ChatClient.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/develop/dist/ChatServer.jar" beforeDir="false" afterPath="$PROJECT_DIR$/develop/dist/ChatServer.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/develop/src/chat/client/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/develop/src/chat/client/ChatClient.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,15 +10,19 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/develop/src/chat/client/ChatClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="217" selection-start-line="217" selection-end-line="217" />
+            <state relative-caret-position="169">
+              <caret line="490" column="22" selection-start-line="490" selection-start-column="22" selection-end-line="490" selection-end-column="22" />
               <folding>
                 <element signature="e#0#17887#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -47,10 +46,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="690" />
-    <option name="y" value="-8" />
-    <option name="width" value="935" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="589" />
+    <option name="width" value="1338" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
@@ -74,22 +72,18 @@
               <item name="ID2010" type="b2602c69:ProjectViewProjectNode" />
               <item name="ID2010" type="462c0819:PsiDirectoryNode" />
               <item name="develop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="bat" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ID2010" type="b2602c69:ProjectViewProjectNode" />
               <item name="ID2010" type="462c0819:PsiDirectoryNode" />
-              <item name="develop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="chat" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ID2010" type="b2602c69:ProjectViewProjectNode" />
               <item name="ID2010" type="462c0819:PsiDirectoryNode" />
-              <item name="develop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="chat" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="cbs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ID2010" type="b2602c69:ProjectViewProjectNode" />
@@ -157,20 +151,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="589" y="0" width="1338" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12313433" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18075117" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.40195015" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -178,14 +168,18 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.40195015" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info active="true" anchor="right" id="Ant Build" order="1" visible="true" weight="0.12153518" />
+      <window_info active="true" anchor="right" id="Ant Build" order="1" visible="true" weight="0.033646323" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -196,22 +190,14 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/chat/client/ChatClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="488" column="34" lean-forward="true" selection-start-line="488" selection-start-column="34" selection-end-line="488" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#17887#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/chat/client/ChatClient.java" />
     <entry file="file://$PROJECT_DIR$/develop/src/chat/client/ChatClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="217" selection-start-line="217" selection-end-line="217" />
+        <state relative-caret-position="169">
+          <caret line="490" column="22" selection-start-line="490" selection-start-column="22" selection-end-line="490" selection-end-column="22" />
           <folding>
             <element signature="e#0#17887#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

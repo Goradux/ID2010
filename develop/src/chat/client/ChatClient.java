@@ -43,6 +43,7 @@ import net.jini.lookup.entry.Name;
 
 import chat.server.ChatServerInterface;
 import chat.server.ChatNotification;
+import java.util.Timer;
 
 /**
  * This class implements the ChatClient application.
@@ -256,6 +257,8 @@ public class ChatClient
      * not). Upon a successful connect, any current service is disconnected.
      * @param serverNamePattern The substring to match against the server name.
      */
+
+    Timer afkTimer = new Timer();
     public void connectToChat (String serverNamePattern)
     {
         // See if we know any servers at all.
@@ -328,6 +331,9 @@ public class ChatClient
                 try {
                     nextServer.register(this);
                     System.out.println("ok]");
+                    //INIT TIMER
+                    if(isAfk)
+                        afkTimer.schedule(() -> sendToChat("I am AFK"), 1000 * afkNotTime);
                 }
                 catch (RemoteException rex) {
                     nextServer = null;
@@ -482,7 +488,7 @@ public class ChatClient
     }
 
     boolean isAfk = true; // are afk notifications on?
-    int afkNotTime = 30; // afk notification time in seconds
+    int afkNotTime = 3; // afk notification time in seconds
     protected void showAfk (String [] argv) {
         if(argv.length == 1) {
             System.out.print ("AFK is on: " + isAfk);
