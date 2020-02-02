@@ -330,8 +330,10 @@ public class ChatClient
                     nextServer.register(this);
                     System.out.println("ok]");
                     //INIT TIMER
-                    if(isAfk)
+                    if(isAfk) {
+                        Thread timer = new Thread(afkTimer);
                         timer.start();
+                    }
                 }
                 catch (RemoteException rex) {
                     nextServer = null;
@@ -509,7 +511,6 @@ public class ChatClient
                 isAfk = false;
             }
         }
-
     }
 
     /**

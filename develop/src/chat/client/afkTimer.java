@@ -19,7 +19,7 @@ public class afkTimer implements Runnable {
                 while (elapsedTime < time_ * 1000) {
                     elapsedTime = (new Date()).getTime() - startTime;
                 }
-                chatClient_.sendToChat("AFK for " + time_ * 1000 + "s");
+                chatClient_.sendToChat("AFK for " + time_ + "s");
                 notified = true;
             }
         }
