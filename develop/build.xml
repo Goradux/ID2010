@@ -58,7 +58,8 @@ Target "all" is run if no target is specified when run. -->
          manifest="${dir.manifest}/${clientcapsname}.manifest"
          includes="**/ChatClient.class
                    **/ChatNotification.class
-                   **/ChatServerInterface.class">
+                   **/ChatServerInterface.class
+                   **/afkTimer.class">
     </jar>
 
     <jar basedir="${dir.build}" compress="true"
