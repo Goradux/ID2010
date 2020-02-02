@@ -16,9 +16,8 @@ import java.io.IOException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Vector;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 // Jini
 
@@ -43,7 +42,7 @@ import net.jini.lookup.entry.Name;
 
 import chat.server.ChatServerInterface;
 import chat.server.ChatNotification;
-import java.util.Timer;
+
 
 /**
  * This class implements the ChatClient application.
@@ -258,7 +257,40 @@ public class ChatClient
      * @param serverNamePattern The substring to match against the server name.
      */
 
-    Timer afkTimer = new Timer();
+//    Timer afkTimer = new Timer();
+//    class Helper extends TimerTask
+//    {
+//        public void run()
+//        {
+//            sendToChat("I am AFK");
+//        }
+//    }
+//    TimerTask task = new Helper();
+
+
+    // make it shared
+    Date last_timestamp = new java.util.Date();
+    boolean became_afk = false;
+
+    public class AfkTimer extends Thread
+    {
+        public void run()
+        {
+            boolean check = false;
+            while (true) {
+                // update old_timestamp
+                // if now - last_timestamp > AfkNotTime:
+                    // became_afk = true;
+                if (check) {
+                    sendToChat("wow");
+                    check = true;
+                }
+            }
+        }
+    }
+
+
+
     public void connectToChat (String serverNamePattern)
     {
         // See if we know any servers at all.
@@ -332,8 +364,21 @@ public class ChatClient
                     nextServer.register(this);
                     System.out.println("ok]");
                     //INIT TIMER
-                    if(isAfk)
-                        afkTimer.schedule(() -> sendToChat("I am AFK"), 1000 * afkNotTime);
+//                    if(isAfk)
+////                        afkTimer.schedule(() -> sendToChat("I am AFK"), 1000 * afkNotTime, 5000);
+//                        afkTimer.schedule(task, afkNotTime * 1000, afkNotTime * 1000);
+//                        afkTimer.
+
+
+                        AfkTimer afk_thread = new AfkTimer();
+                        afk_thread.start();
+
+
+
+
+
+
+
                 }
                 catch (RemoteException rex) {
                     nextServer = null;
